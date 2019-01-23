@@ -18,24 +18,31 @@ class UbigeoController extends Controller
     {
         $inputs = $request->only(['code', 'name', 'type', 'parent_code']);
 
-        $validator = Validator::make($inputs, [
-            'code' => 'digits:6',
-            'name' => 'min:3',
-            'type' => 'in:departamento,provincia,distrito',
-            'parent_code' => 'digist:6'
-        ]);
+        try {
+            $validator = Validator::make($inputs, [
+                'code' => 'digits:6',
+                'name' => 'min:3',
+                'type' => 'in:departamento,provincia,distrito',
+                'parent_code' => 'digist:6'
+            ]);
 
-        if ($validator->fails()) {
+            if ($validator->fails()) {
+                return response()->json([
+                    'errors' => $validator->errors()->all()
+                ], 400);
+            }
+
+            $ubigeos = Ubigeo::search($inputs)
+                                ->orderBy('code', 'asc')
+                                ->get();
+
+            return $ubigeos;
+        } catch (Exception $e) {
+            \Log::info('Error retrieving ubigeos: '.$e);
             return response()->json([
-                'errors' => $validator->errors()->all()
-            ], 400);
+                'errors' => 'Error retrieving ubigeos'
+            ], 500);
         }
-
-        $ubigeos = Ubigeo::search($inputs)
-                            ->orderBy('code', 'asc')
-                            ->get();
-
-        return $ubigeos;
     }
 
     /**
