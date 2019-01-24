@@ -4,17 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ubigeo extends Model
+class Zona extends Model
 {
-    protected $table = 'ubigeos';
+    protected $table = 'zonas';
 
     protected $fillable = [
-        'id', 'codigo', 'nombre', 'tipo', 'codigo_padre', 'capital', 'estado'
+        'id', 'codigo', 'denominacion', 'estado'
     ];
 
     public function scopeSearch($query, $parameters)
     {
-        $query->select('codigo', 'tipo', 'codigo_padre', 'nombre', 'capital')
+        $query->select('codigo', 'denominacion')
                 ->where('estado', 1);
 
         foreach ($parameters as $key => $value) {

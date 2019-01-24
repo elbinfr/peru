@@ -16,14 +16,14 @@ class UbigeoController extends Controller
      */
     public function index(Request $request)
     {
-        $inputs = $request->only(['code', 'name', 'type', 'parent_code']);
+        $inputs = $request->only(['codigo', 'nombre', 'tipo', 'codigo_padre']);
 
         try {
             $validator = Validator::make($inputs, [
-                'code' => 'digits:6',
-                'name' => 'min:3',
-                'type' => 'in:departamento,provincia,distrito',
-                'parent_code' => 'digist:6'
+                'codigo' => 'digits:6',
+                'nombre' => 'min:3',
+                'tipo' => 'in:departamento,provincia,distrito',
+                'codigo_padre' => 'digist:6'
             ]);
 
             if ($validator->fails()) {
@@ -33,7 +33,7 @@ class UbigeoController extends Controller
             }
 
             $ubigeos = Ubigeo::search($inputs)
-                                ->orderBy('code', 'asc')
+                                ->orderBy('codigo', 'asc')
                                 ->get();
 
             return $ubigeos;
