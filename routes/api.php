@@ -16,3 +16,5 @@ use Illuminate\Http\Request;
 Route::apiResource('ubigeos', 'UbigeoController');
 
 Route::get('zonas', 'ZonaController@index');
+
+Route::get('vias', 'ViaController@index');
