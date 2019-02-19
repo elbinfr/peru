@@ -32,7 +32,10 @@ class ViaController extends Controller
 
             $vias = Via::search($inputs)->orderBy('codigo', 'asc')->get();
 
-            return $vias;
+            return response()->json([
+                'total_registros' => count($vias),
+                'datos' => $vias
+            ]);
 
         } catch (Exception $e) {
             \Log::info('Error retrieving vias: '.$e);

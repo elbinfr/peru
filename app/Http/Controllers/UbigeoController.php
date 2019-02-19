@@ -36,7 +36,10 @@ class UbigeoController extends Controller
                                 ->orderBy('codigo', 'asc')
                                 ->get();
 
-            return $ubigeos;
+            return response()->json([
+                'total_registros' => count($ubigeos),
+                'datos' => $ubigeos
+            ], 200);
         } catch (Exception $e) {
             \Log::info('Error retrieving ubigeos: '.$e);
             return response()->json([

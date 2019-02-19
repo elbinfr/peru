@@ -33,7 +33,10 @@ class ZonaController extends Controller
                         ->orderBy('codigo', 'asc')
                         ->get();
 
-            return $zonas;
+            return response()->json([
+                'total_registros' => count($zonas),
+                'datos' => $zonas
+            ], 200);
 
         } catch (Exception $e) {
             \Log::info('Error retrieving zonas: '.$e);
