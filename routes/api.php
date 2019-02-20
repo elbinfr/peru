@@ -18,3 +18,5 @@ Route::apiResource('ubigeos', 'UbigeoController');
 Route::get('zonas', 'ZonaController@index');
 
 Route::get('vias', 'ViaController@index');
+
+Route::get('tipo-cambio', 'MonedaController@index');
