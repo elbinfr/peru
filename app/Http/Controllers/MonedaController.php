@@ -15,17 +15,25 @@ class MonedaController extends Controller
      */
     public function index()
     {
-        $currentDate = date("Y-m-d");
-        $monedas = Moneda::select('moneda', 'compra', 'venta')
-                            ->whereDate('fecha', $currentDate)->get();
+        try {
+            $currentDate = date("Y-m-d");
+            $monedas = Moneda::tipoCambio($currentDate)->get();
 
-        if (count($monedas)) {
-            //traer monedas de la ultima fecha
-        }
+            if (count($monedas) < 0) {
+                $diaHabil = App\Moneda::diaHabil()->first();
 
-        return response()->json([
-            'total_registros' => count($monedas),
-            'datos' => $monedas
-        ]);
+                $monedas = Moneda::tipoCambio($diaHabil->fecha)->get();
+            }
+
+            return response()->json([
+                'total_registros' => count($monedas),
+                'datos' => $monedas
+            ]);
+        } catch (Exception $e) {
+            \Log::info('Error obteniendo monedas: '.$e);
+            return response()->json([
+                'errors' => 'Error obteniendo monedas'
+            ], 500);
+        }        
     }
 }
