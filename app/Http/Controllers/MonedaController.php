@@ -19,8 +19,8 @@ class MonedaController extends Controller
             $currentDate = date("Y-m-d");
             $monedas = Moneda::tipoCambio($currentDate)->get();
 
-            if (count($monedas) < 0) {
-                $diaHabil = App\Moneda::diaHabil()->first();
+            if (count($monedas) <= 0) {
+                $diaHabil = Moneda::diaHabil()->first();
 
                 $monedas = Moneda::tipoCambio($diaHabil->fecha)->get();
             }
