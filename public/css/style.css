@@ -1,0 +1,33 @@
+.coiny{
+    font-family: 'Coiny', cursive;
+}
+
+.pacifico{
+    font-family: 'Pacifico', cursive;
+}
+
+.dosis{
+    font-family: 'Dosis', sans-serif;
+}
+
+.main-title{
+    font-size: 3.5rem !important;
+}
+
+.c-azul{
+    color: #245D98;
+}
+
+.subtitulo{
+    color: #36526E;
+}
+
+.fondo-ocean{
+    background-color: #2b303b;
+}
+
+.pre{
+    color: white;
+    white-space: pre-wrap;
+    font-family: monospace;
+}
