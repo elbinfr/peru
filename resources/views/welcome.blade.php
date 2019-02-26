@@ -35,23 +35,23 @@
                     <div class="col-md-6">
                         <div class="card shadow-sm">
                             <div class="card-header fondo-ocean">
-                                <pre><code class="json">
-{
-    "codigo": "010101",
-    "tipo": "distrito",
-    "codigo_padre": "010100",
-    "nombre": "Chachapoyas",
-    "capital": "Chachapoyas"
-}</code></pre>
+                                <pre class="sin-margen-b"><code class="json" id="ubigeoTag"></code></pre>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title subtitulo">Ubigeos</h5>
                                 <p class="card-text">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus excepturi ea asperiores, dicta necessitatibus unde reiciendis culpa totam eum nobis, voluptates veniam animi illum sapiente laudantium ipsam. Earum, iste rem?
+                                    <strong>Descripción: </strong>Códigos de ubicación geográfica tipificados según SUNAT.
+                                    <br>
+                                    <strong>Método HTTP: </strong>GET
+                                    <br>
+                                    <strong>Url: </strong><a href="{{ url('api/ubigeos') }}">/api/ubigeos</a>
+                                    <br>
+                                    <strong>Filtros: </strong>puede filtrar por los atributos del objeto como 
+                                    codigo, tipo (departamento, provincia, distrito), codigo_padre, nombre, capital.
                                 </p>
-                                <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center float-right">
                                     <div class="btn-group">
-                                        <a href="#" class="btn btn-sm btn btn-outline-primary">Ver</a>
+                                        <a href="{{ url('api/ubigeos') }}" class="btn btn-sm btn btn-outline-primary">Ver</a>
                                     </div>
                                 </div>
                             </div>
@@ -60,22 +60,21 @@
                     <div class="col-md-6">
                         <div class="card shadow-sm">
                             <div class="card-header fondo-ocean">
-                                <pre><code class="json">
-{
-    "moneda": "DÓLAR DE N.A.",
-    "compra": "3.307",
-    "venta": "3.310"
-}</code></pre>
+                                <pre class="sin-margen-b"><code class="json" id="tipoCambioTag"></code></pre>
                                 
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title subtitulo">Tipo de cambio</h5>
                                 <p class="card-text">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus excepturi ea asperiores, dicta necessitatibus unde reiciendis culpa totam eum nobis, voluptates veniam animi illum sapiente laudantium ipsam. Earum, iste rem?
+                                    <strong>Descripción: </strong>Tipo de cambio actual según SBS.
+                                    <br>
+                                    <strong>Método HTTP: </strong>GET
+                                    <br>
+                                    <strong>Url: </strong><a href="{{ url('api/tipo-cambio') }}">/api/tipo-cambio</a>
                                 </p>
-                                <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center float-right">
                                     <div class="btn-group">
-                                        <a href="#" class="btn btn-sm btn btn-outline-primary">Ver</a>
+                                        <a href="{{ url('api/tipo-cambio') }}" class="btn btn-sm btn btn-outline-primary">Ver</a>
                                     </div>
                                 </div>
                             </div>
@@ -87,20 +86,23 @@
                     <div class="col-md-6">
                         <div class="card shadow-sm">
                             <div class="card-header fondo-ocean">
-                                <pre><code class="json">
-{
-    "codigo": "01",
-    "denominacion": "Urbanización"
-}</code></pre>
+                                <pre class="sin-margen-b"><code class="json" id="zonaTag"></code></pre>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title subtitulo">Zonas</h5>
-                                <p>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus excepturi ea asperiores, dicta necessitatibus unde reiciendis culpa totam eum nobis, voluptates veniam animi illum sapiente laudantium ipsam. Earum, iste rem?
+                                <p class="card-text">
+                                    <strong>Descripción: </strong>Clasificación de zona en la que se ubica el domicilio fiscal del contribuyente, según SUNAT.
+                                    <br>
+                                    <strong>Método HTTP: </strong>GET
+                                    <br>
+                                    <strong>Url: </strong><a href="{{ url('api/zonas') }}">/api/zonas</a>
+                                    <br>
+                                    <strong>Filtros: </strong>puede filtrar por los atributos del objeto como 
+                                    codigo, denominacion.
                                 </p>
-                                <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center float-right">
                                     <div class="btn-group">
-                                        <a href="#" class="btn btn-sm btn btn-outline-primary">Ver</a>
+                                        <a href="{{ url('api/zonas') }}" class="btn btn-sm btn btn-outline-primary">Ver</a>
                                     </div>
                                 </div>
                             </div>
@@ -109,20 +111,23 @@
                     <div class="col-md-6">
                         <div class="card shadow-sm">
                             <div class="card-header fondo-ocean">
-                                <pre><code class="json">
-{
-    "codigo": "01",
-    "denominacion": "Avenida"
-}</code></pre>
+                                <pre class="sin-margen-b"><code class="json" id="viaTag"></code></pre>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title subtitulo">Vias</h5>
-                                <p>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus excepturi ea asperiores, dicta necessitatibus unde reiciendis culpa totam eum nobis, voluptates veniam animi illum sapiente laudantium ipsam. Earum, iste rem?
+                                <p class="card-text">
+                                    <strong>Descripción: </strong>Clasificación de vía en la que se ubica el domicilio fiscal del contribuyente, según SUNAT.
+                                    <br>
+                                    <strong>Método HTTP: </strong>GET
+                                    <br>
+                                    <strong>Url: </strong><a href="{{ url('api/vias') }}">/api/vias</a>
+                                    <br>
+                                    <strong>Filtros: </strong>puede filtrar por los atributos del objeto como 
+                                    codigo, denominacion.
                                 </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="#" class="btn btn-sm btn btn-outline-primary">Ver</a>
+                                <div class="d-flex justify-content-between align-items-center float-right">
+                                    <div class="btn-group ">
+                                        <a href="{{ url('api/vias') }}" class="btn btn-sm btn btn-outline-primary">Ver</a>
                                     </div>
                                 </div>
                             </div>
@@ -133,10 +138,13 @@
         </div>
     </main>
 
-    <footer>
-        <p>Nube de ideas</p>
+    <footer class="footer mt-auto py-3">
+        <div class="footer-container">
+            &copy; 2019. Creado por <a class="text-muted" href="http://nubedeideas.pe/" target="_blank">Nube de ideas</a>
+        </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
@@ -145,5 +153,35 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src={{ asset('plugins/highlight/highlight.pack.js') }}></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        (function(){
+            let ubigeoTag = '#ubigeoTag'
+            let tipoCambioTag = '#tipoCambioTag'
+            let zonaTag = '#zonaTag'
+            let viaTag = '#viaTag'
+
+            let ubigeoData = {!! $ubigeo !!}
+            let tipoCambioData = {!! $moneda !!}
+            let zonaData = {!! $zona !!}
+            let viaData = {!! $via !!}
+
+            const load = () => {
+                initElements();
+            }
+
+            const initElements = () =>{
+                $(ubigeoTag).html(formatData(ubigeoData))
+                $(tipoCambioTag).html(formatData(tipoCambioData))
+                $(zonaTag).html(formatData(zonaData))
+                $(viaTag).html(formatData(viaData))
+            }
+
+            const formatData = (data) => {
+                return JSON.stringify(data, null, 4)
+            }
+
+            load();
+        })()
+    </script>
 </body>
 </html>
