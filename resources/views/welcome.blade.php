@@ -17,18 +17,20 @@
 </head>
 <body class="dosis">
     <main role="main">
-        <section class="jumbotron text-center">
+        <section class="jumbotron text-center fondo-blanco margin-bottom-0 fondo-mapa">
             <div class="container">
-                <h1 class="jumbotron-heading pacifico main-title c-azul">Peru Api</h1>
-                <p class="lead text-muted ">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+                <h1 class="jumbotron-heading pacifico main-title c-azul">{ Peru Api }</h1>
+                <p class="lead text-muted ">
+                    Bienvenido a PeruApi, una API gratuita que puedes consultar cuando necesites datos de Perú para usarlos en el proyecto que desees.
+                </p>
             </div>
         </section>
 
-        <div class="album py-5 bg-light">
+        <div class="album py-5 bg-light fondo-blanco padding-top-0">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h4 class="text-center pacifico c-azul">Recursos disponibles</h4>
+                        <h4 class="text-center pacifico c-azul margin-bottom-20">Recursos disponibles</h4>
                     </div>
                 </div>
                 <div class="row">
