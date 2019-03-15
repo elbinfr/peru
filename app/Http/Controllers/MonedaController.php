@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Moneda;
+use App\Visita;
 
 class MonedaController extends Controller
 {
@@ -16,6 +17,8 @@ class MonedaController extends Controller
     public function index()
     {
         try {
+            Visita::where('recurso', 'tipo_cambio')->increment('cantidad');
+
             $currentDate = date("Y-m-d");
             $monedas = Moneda::tipoCambio($currentDate)->get();
 
@@ -34,6 +37,6 @@ class MonedaController extends Controller
             return response()->json([
                 'errors' => 'Error obteniendo monedas'
             ], 500);
-        }        
+        }
     }
 }

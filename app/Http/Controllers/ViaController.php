@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Validator;
 
 use App\Via;
+use App\Visita;
 
 class ViaController extends Controller
 {
@@ -19,6 +20,8 @@ class ViaController extends Controller
         $inputs = $request->only(['codigo', 'denominacion']);
 
         try {
+            Visita::where('recurso', 'via')->increment('cantidad');
+
             $validator = Validator::make($inputs, [
                 'codigo' => 'digits:2',
                 'denominacion' => 'min:5'

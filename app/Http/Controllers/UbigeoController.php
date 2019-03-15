@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Validator;
 
 use App\Ubigeo;
+use App\Visita;
 
 class UbigeoController extends Controller
 {
@@ -19,6 +20,8 @@ class UbigeoController extends Controller
         $inputs = $request->only(['codigo', 'nombre', 'tipo', 'codigo_padre']);
 
         try {
+            Visita::where('recurso', 'ubigeo')->increment('cantidad');
+            
             $validator = Validator::make($inputs, [
                 'codigo' => 'digits:6',
                 'nombre' => 'min:3',

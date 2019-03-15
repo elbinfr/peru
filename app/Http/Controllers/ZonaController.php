@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Validator;
+use App\Visita;
 use App\Zona;
 
 class ZonaController extends Controller
@@ -18,6 +19,8 @@ class ZonaController extends Controller
         $inputs = $request->only(['codigo', 'denominacion']);
 
         try {
+            Visita::where('recurso', 'zona')->increment('cantidad');
+
             $validator = Validator::make($inputs, [
                 'codigo' => 'digits:2',
                 'denominacion' => 'min:5'
